@@ -1,28 +1,36 @@
 import React from 'react';
 import Rating from '@material-ui/lab/Rating';
 import Box from '@material-ui/core/Box';
+import Grid from "@material-ui/core/Grid";
 import { makeStyles } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        alignItems: 'center'
+    display: 'flex',
+    // alignItems: 'center',
+    // justifyContent: 'center',
     }
   }));
-export default function SimpleRating() {
+export default function SimpleRating(props) {
     const classes = useStyles();
-  const [value, setValue] = React.useState(2);
+  const [value, setValue] = React.useState(props.value);
 
   return (
-    <div className={classes.root}>
+    <div >
+    <Grid container alignItems="center" justify="space-between">
+    <Grid item>
         <Rating
           name="simple-controlled"
           value={value}
+          readOnly={true}
           onChange={(event, newValue) => {
             setValue(newValue);
           }}
         />
+        </Grid>
         {value}
+        </Grid>
     </div>
   );
 }

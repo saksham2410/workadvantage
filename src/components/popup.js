@@ -38,10 +38,12 @@ export default function SimpleDialog(props) {
   return (
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
       <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
+      <Card>
       <CardMedia
         className={classes.media}
         image={imageUrl}
       />
+      </Card>
     </Dialog>
   );
 }

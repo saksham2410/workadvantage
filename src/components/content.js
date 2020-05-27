@@ -19,7 +19,7 @@ export default function Content() {
   };
   const getCoffeMakerCard = coffeMakerObj => {
     return (
-      <Grid item xs={12} sm={3}>
+      <Grid item xs={12} sm={3} >
         <RecipeReviewCard detail={handleClickOpen} {...coffeMakerObj} />
       </Grid>
     );

@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
 export default function RecipeReviewCard(props) {
     
   const classes = useStyles();
-  const { avatarUrl, title, subtitle, description, imageUrl, detail } = props;
+  const { avatarUrl, title, subtitle, description, imageUrl, detail, rating } = props;
 
   return (
     <Card className={classes.root} border={3} onClick={
@@ -73,10 +73,10 @@ export default function RecipeReviewCard(props) {
         image={imageUrl}
       />
       <CardContent>
-      <Grid xs={12}>
+      <Grid item xs={12}>
       <Grid container alignItems="center">
       <Grid item xs={6}><h3>{title}</h3></Grid>
-      <Grid item xs={6}><SimpleRating/></Grid>
+      <Grid item xs={6}><SimpleRating value={rating}/></Grid>
       </Grid>
       </Grid>
       <h6>{subtitle}</h6>

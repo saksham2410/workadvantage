@@ -52,5 +52,23 @@ export default [
         rating: 3,
       imageUrl:
         "https://franchisekaro.in/wp-content/uploads/2019/07/wowwww-1024x768.jpg"
-    }
+    },
+    {
+        title: "Mandarin oak",
+        subtitle: "mumbai",
+        description:
+          "Test description",
+          rating :2,
+        imageUrl:
+          "https://limetray.com/blog/wp-content/uploads/2019/06/1503987394.jpg"
+      },
+      {
+        title: "Sweet truth ",
+        subtitle: "Jaipur",
+        description:
+          'Demo descirption',
+          rating: 3,
+        imageUrl:
+          "https://franchisekaro.in/wp-content/uploads/2019/07/wowwww-1024x768.jpg"
+      }
   ];
