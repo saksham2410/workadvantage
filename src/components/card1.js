@@ -63,12 +63,12 @@ export default function RecipeReviewCard(props) {
   const { avatarUrl, title, subtitle, description, imageUrl, detail, rating } = props;
 
   return (
-    <Card className={classes.root} border={3} onClick={
+    <Card className={classes.root} border={3}  >
+      <CardMedia onClick={
         ()=> {
             detail()
         }
-    } >
-      <CardMedia
+    }
         className={classes.media}
         image={imageUrl}
       />

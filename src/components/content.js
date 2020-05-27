@@ -25,17 +25,10 @@ export default function Content() {
     );
   };
 
-  const getPopup = coffeMakerObj => {
-    return (
-        <SimpleDialog selectedValue={selectedValue} open={open} onClose={handleClose} {...coffeMakerObj} />
-    );
-  };
 
   return (
       <div>
-      <Grid container spacing={2}>
-      {coffeMakerList.map(coffeMakerObj => getPopup(coffeMakerObj))}
-    </Grid>
+      <SimpleDialog selectedValue={selectedValue} open={open} onClose={handleClose}/>
      
     <Grid container spacing={2}>
       {coffeMakerList.map(coffeMakerObj => getCoffeMakerCard(coffeMakerObj))}
