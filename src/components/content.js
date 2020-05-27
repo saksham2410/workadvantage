@@ -7,15 +7,17 @@ import SimpleDialog from './popup';
 export default function Content() {
     const emails = ['username@gmail.com', 'user02@gmail.com'];
     const [open, setOpen] = React.useState(false);
+    const [selected, setSelected] = React.useState(null);
   const [selectedValue, setSelectedValue] = React.useState(emails[1]);
 
-  const handleClickOpen = () => {
+  const handleClickOpen = (coffeMakerObj) => {
     setOpen(true);
+    setSelected(coffeMakerObj);
   };
-
+  console.log('dahiyaaa',selected)
   const handleClose = (value) => {
     setOpen(false);
-    setSelectedValue(value);
+    setSelected(null);
   };
   const getCoffeMakerCard = coffeMakerObj => {
     return (
@@ -25,10 +27,9 @@ export default function Content() {
     );
   };
 
-
   return (
       <div>
-      <SimpleDialog selectedValue={selectedValue} open={open} onClose={handleClose}/>
+      <SimpleDialog selectedValue={selectedValue} open={open} value1={selected} onClose={handleClose}/>
      
     <Grid container spacing={2}>
       {coffeMakerList.map(coffeMakerObj => getCoffeMakerCard(coffeMakerObj))}

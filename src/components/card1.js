@@ -60,13 +60,13 @@ const useStyles = makeStyles((theme) => ({
 export default function RecipeReviewCard(props) {
     
   const classes = useStyles();
-  const { avatarUrl, title, subtitle, description, imageUrl, detail, rating } = props;
-
+  const { detail, ...item } = props;
+    const {title, subtitle, description, imageUrl, rating} = item
   return (
     <Card className={classes.root} border={3}  >
       <CardMedia onClick={
         ()=> {
-            detail()
+            detail(item)
         }
     }
         className={classes.media}
@@ -94,7 +94,7 @@ export default function RecipeReviewCard(props) {
         <Grid item xs={3}>
         <Button variant="contained" onClick={
             ()=> {
-                detail()
+                detail(item)
             }
         } size="small" className={classes.paper}>BUY NOW</Button>
         </Grid></Grid>

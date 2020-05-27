@@ -20,12 +20,20 @@ const useStyles = makeStyles({
     backgroundColor: blue[100],
     color: blue[600],
   },
+  root: {
+      height: 450,
+      width: 400
+  },
+  media: {
+      height: 0
+  }
 });
 
 export default function SimpleDialog(props) {
+    console.log('meowwwwww',props)
     const emails = ['username@gmail.com', 'user02@gmail.com'];
   const classes = useStyles();
-  const { onClose, selectedValue, open, avatarUrl, title, subtitle, description, imageUrl } = props;
+  const { onClose, selectedValue, open, value1} = props;
 
   const handleClose = () => {
     onClose(selectedValue);
@@ -37,11 +45,10 @@ export default function SimpleDialog(props) {
 
   return (
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
-      <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
-      <Card>
-      <CardMedia
-        className={classes.media}
-        image={imageUrl}
+      <DialogTitle id="simple-dialog-title">{value1 && value1.title || ''}</DialogTitle>
+      <Card >
+      <CardMedia className = {classes.root}
+        image={value1 && value1.imageUrl || ''}
       />
       </Card>
     </Dialog>
